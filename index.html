@@ -1,0 +1,1310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Feliz Cumpleaños | Una Experiencia Especial</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ee2b6c",
+              "background-light": "#f8f6f6",
+              "background-dark": "#221016",
+              "card-dark": "rgba(255,255,255,0.04)",
+              sienna: {
+                50: "#fdf8f6",
+                900: "#2d1b1e",
+              },
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+              handwritten: ["Great Vibes", "cursive"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 300,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .hero-gradient {
+        background: linear-gradient(
+          to bottom,
+          rgba(34, 16, 22, 0.3) 0%,
+          rgba(34, 16, 22, 0.8) 70%,
+          rgba(34, 16, 22, 1) 100%
+        );
+      }
+        /* Mostrar carta final */
+      #reveal-toggle:checked ~ main #letter-overlay {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body class="overflow-hidden">
+    <!-- LOADER -->
+    <div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#12070c] transition-opacity duration-6000 overflow-hidden">
+          <div class="fixed inset-0 bg-subtle-gradient pointer-events-none"></div>
+        <div
+          class="relative flex flex-col items-center justify-center w-full max-w-4xl px-6 z-10"
+        >
+          <div
+            class="layout-content-container flex flex-col items-center w-full max-w-[600px] text-center space-y-12"
+          >
+            <div class="flex flex-col items-center gap-8">
+              <div class="relative">
+                <div
+                  class="absolute inset-0 bg-primary/30 rounded-full blur-xl animate-pulse"
+                ></div>
+                <div
+                  class="relative w-32 h-32 md:w-44 md:h-44 rounded-full border-[1.5px] border-white/40 overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                >
+                  <img
+                    alt="Partner"
+                    class="w-full h-full object-cover"
+                    src="images/inicio.jpeg"
+                  />
+                </div>
+              </div>
+              <div class="flex justify-center">
+                <span
+                  class="material-symbols-outlined text-primary text-4xl animate-pulse-soft"
+                >
+                  favorite
+                </span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <h1
+                class="text-white tracking-tight text-[28px] md:text-[40px] font-bold leading-tight px-4 animate-pulse-soft"
+              >
+                Preparando algo especial para ti... 💖
+              </h1>
+              <p
+                class="text-[#d488a0] text-sm md:text-lg font-normal tracking-wide opacity-80"
+              >
+                Un momento, estamos ordenando los mejores recuerdos.
+              </p>
+            </div>
+            <div class="flex flex-col gap-5 w-full px-8 md:px-16">
+              <div class="flex justify-between items-end mb-1">
+                <p
+                  class="text-white/60 text-xs font-medium uppercase tracking-[0.25em]"
+                >
+                  Cargando magia
+                </p>
+                <p class="text-primary text-sm font-semibold">85%</p>
+              </div>
+              <div class="w-full h-[3px] bg-white/10 rounded-full overflow-hidden">
+                <div
+                  class="h-full bg-primary rounded-full animate-progress shadow-[0_0_20px_rgba(238,43,108,0.8)]"
+                ></div>
+              </div>
+              <div class="flex items-center justify-center gap-2 mt-4 opacity-40">
+                <span class="material-symbols-outlined text-[14px] text-[#d488a0]">
+                  auto_awesome
+                </span>
+                <p
+                  class="text-[#d488a0] text-[10px] font-normal uppercase tracking-[0.3em]"
+                >
+                  Contando los latidos
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="fixed top-[-10%] left-[-5%] w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="fixed bottom-[-5%] right-[-5%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl"
+        ></div>
+        <div class="hidden">
+          <img
+            data-alt="Soft pink abstract bokeh light background"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbjm1-43FwrpfB_oWCAob4SrxgBxC7Xi-xNEmX7IYhjdPXi8qdxVdqp9GvP8LuvIvkwULKx_D_uV-x9Hk29Oxau1H6qZ8xv-BBgJsoFZy6_BuXaB81EYgL61x8fUMHai5pB5jXMWuwVlCgQewYrnsWW5k444MkMTigcNaHnLrAOLDeaezRz-Wf3kXVfI9IyoocFvLxjQ3PJpJqWooFse4YvRjS0_GbcX_CLRQeiGYKhyELsfQNMuEk7WidiROnWPT7bITPl-1GHwM"
+          />
+          <img
+            data-alt="Elegant minimal heart illustration for background"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC4E6HcWsUJ15jueiXiT-m1OZxHQpGkH5zkOtAWiTNQOso4M2oV4xgsja9svnUBSpckIPPCOStZoxPD0MDoP3ECqc5QpaU-c9-JbvUOuwgpFip2uqhZcEv2gTPrNDHzFWxFgngiS82_RirUBkc0T5KWcG9CAM1A1SP5eQ5IJNhhil-DnY3KBiebd2ktmbWfhBCBksrx8y2mHMXTICfT8OKTVJ7m-RT3-qlTJ8ohw6e7QHw9wFofQHa4LOSxKFQtufhF201YNJ0cYM"
+          />
+        </div>
+    </div>
+     <!-- Navigation -->
+    <header
+              class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 md:px-20"
+            >
+              <div class="flex items-center gap-2">
+                <div class="size-8 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-3xl">favorite</span>
+                </div>
+                <h2
+                  class="text-white text-xl font-serif italic tracking-wider leading-tight"
+                >
+                  H&amp;A
+                </h2>
+              </div>
+              <nav class="hidden md:flex items-center gap-5">
+                <a
+                  class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors"
+                  href="#inicio"
+                  >Inicio</a
+                >
+                <a
+                  class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors"
+                  href="#historia"
+                  >Historia</a
+                >
+                <a
+                  class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors"
+                  href="#razones"
+                  >Razones</a
+                >
+              
+                <a
+                  class="text-white/80 hover:text-primary text-sm font-medium tracking-widest uppercase transition-colors"
+                  href="#ultima"
+                  >Recorrido final</a
+                >
+                <button
+                  id="music-toggle"
+                  aria-label="Control de música"
+                  class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white rounded-full p-2 flex items-center justify-center transition-all"
+                >
+                  <span id="music-icon" class="material-symbols-outlined">
+                    volume_off
+                  </span>
+                </button>
+
+              </nav>
+              <div class="flex md:hidden">
+                <button id="open-menu" aria-label="Abrir menú">
+                  <span class="material-symbols-outlined text-white text-3xl">menu</span>
+                </button>
+              </div>
+
+    </header>
+   
+            
+            <!-- Mobile Menu -->
+              <div
+                id="mobile-menu"
+                class="fixed inset-0 z-40 bg-background-dark/95 backdrop-blur-lg
+                      flex flex-col items-center justify-center gap-8
+                      text-white text-lg uppercase tracking-widest
+                      opacity-0 pointer-events-none transition-opacity duration-300
+                      md:hidden"
+              >
+                <a href="#inicio" class="hover:text-primary">Inicio</a>
+                <a href="#historia" class="hover:text-primary">Historia</a>
+                <a href="#razones" class="hover:text-primary">Razones</a>
+                <a href="#ultima" class="hover:text-primary">Recorrido final</a>
+
+                <button
+                  id="close-menu"
+                  class="absolute top-6 right-6 text-white"
+                >
+                  <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+              </div>
+
+
+    <div id="main-content" class="hidden opacity-0 transition-opacity duration-700">
+
+      <!-- CONTROL DEL OVERLAY -->
+          <input type="checkbox" id="reveal-toggle" class="hidden">
+
+            
+
+            <main class="flex flex-col">
+              <!-- Hero Section -->
+              <section   id="inicio" class=" scroll-mt-32 relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+                <!-- Background Image with Overlay -->
+                <div class="absolute inset-0 z-0">
+                  <div class="absolute inset-0 hero-gradient z-10"></div>
+                  <img
+                    alt="Romantic atmospheric couple background"
+                    class="w-full h-full object-cover scale-105"
+                    data-alt="Blurred romantic sunset background with couple silhouette"
+                    src="images/imgHero.jpg"
+                  />
+                </div>
+                <!-- Hero Content -->
+                <div
+                  class="relative z-20 text-center px-6 max-w-4xl mx-auto flex flex-col items-center gap-8"
+                >
+                  <div class="space-y-4">
+                    <span
+                      class="text-primary font-medium tracking-[0.3em] uppercase text-sm block"
+                      >Para mi persona favorita</span
+                    >
+                    <h1
+                      class="text-white font-serif text-5xl md:text-8xl leading-tight"
+                    >
+                      ¡Feliz Cumpleaños, <br /><span class="italic"
+                        >Adelina Mina Dimas 🥰🎉</span
+                      >!
+                    </h1>
+                    <p
+                      class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed"
+                    >
+                      Hoy no es solo un día más, es el inicio de un capítulo dedicado
+                      enteramente a celebrar tu vida y todo lo que eres para mí.
+                    </p>
+                  </div>
+                  <div class="flex flex-col items-center gap-12 mt-4">
+                    <a href="#introduccion"
+                      class="group relative flex min-w-[200px] items-center justify-center overflow-hidden rounded-full h-14 px-8 bg-primary text-white text-lg font-bold tracking-wide transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-primary/20"
+                    >
+                      <span class="truncate">Comenzar el viaje</span>
+                      <span
+                        class="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-1"
+                        >arrow_forward</span
+                      >
+                    </a>
+                    <!-- Scroll Indicator -->
+                    <div class="flex flex-col items-center gap-2 text-white/40">
+                      <span class="text-[10px] uppercase tracking-[0.4em]"
+                        >Desliza</span
+                      >
+                      <div
+                        class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- Intro / Story Transition Section -->
+              <section id="introduccion" class="bg-background-dark py-32 px-6 md:px-20">
+                <!-- Abstract Decoration -->
+                <div
+                  class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -mr-48 -mt-48"
+                ></div>
+                <div
+                  class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -ml-48 -mb-48"
+                ></div>
+                <div class="max-w-3xl mx-auto text-center space-y-12">
+                  <div
+                    class="inline-flex items-center justify-center size-12 rounded-full border border-white/10 mb-4"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >auto_awesome</span
+                    >
+                  </div>
+                  <h2
+                    class="text-white font-serif text-3xl md:text-5xl leading-snug italic"
+                  >
+                    "En cada rincón de nuestra historia, <br class="hidden md:block" />
+                    hay un motivo más para celebrarte."
+                  </h2>
+                  <div class="w-16 h-[2px] bg-primary/30 mx-auto"></div>
+                  <div
+                    class="space-y-8 text-white/60 text-lg font-light leading-relaxed max-w-2xl mx-auto"
+                  >
+                    <p>
+                      A lo largo de este tiempo y de todo lo que he llegado a conocerte, puedo decir con el corazón que eres una mujer inmensamente hermosa, valiente e inteligente.
+                      Quise tomarme el tiempo de crear este pequeño detalle para ti, para recordarte lo importante que eres,
+                      porque no solo eres especial…
+                      eres una persona increíble que deja huella en todo lo que toca. 🤍
+                    </p>
+                    <p>
+                      Hecho con amor, para ti.
+                        Espero que te guste y lo disfrutes. 🤍
+                    </p>
+                  </div>
+                  
+                  </div>
+                </div>
+              </section>
+              <!-- Content Divider -->
+              <div
+                class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
+              ></div>
+              <!-- Sub-Section Navigation Button (Mobile/Minimalist style) -->
+              <div class="bg-background-dark py-20 px-4">
+                <div class="max-w-[960px] mx-auto">
+                  <div
+                    class="flex flex-col md:flex-row items-center justify-between gap-8 p-10 rounded-3xl bg-sienna-900/40 border border-white/5 backdrop-blur-sm"
+                  >
+                    <div class="text-center md:text-left">
+                      <h3 class="text-white text-2xl font-serif mb-2">
+                        ¿Estás lista para ver lo que sigue?
+                      </h3>
+                      <p class="text-white/50 font-light">
+                        Eres una mujer extraordinaria y profundamente importante para mí.
+                        Mi vida es mejor desde que estás en ella. 💖
+                      </p>
+                    </div>
+                    💓💓💓💓
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECCIÓN 3: HISTORIA -->
+              <section id="historia" class="scroll-mt-32 bg-background-dark py-32 px-6 md:px-20 transition-colors duration-700">
+                <div class="pt-32 pb-20 px-4 md:px-20 max-w-[1200px] mx-auto">
+                  <div class="text-center mb-20">
+                    <h1 class="text-white tracking-tight text-[48px] md:text-[64px] font-extrabold">
+
+                      Eres Tú, en Cada Detalle
+                    </h1>
+                    <p
+                      class="text-white/70 dark:text-[#c992a4] text-lg md:text-xl font-normal max-w-2xl mx-auto"
+                    >
+                      En cada foto veo más que un rostro hermoso: veo luz, elegancia y una esencia única.
+                      Veo tu sonrisa iluminando momentos, tu porte reflejando seguridad y tu sencillez convirtiéndose en magia.
+                      Veo a una mujer auténtica, fuerte, dulce y hermosa, no solo por cómo se ve… sino por lo que es.
+                      Cada imagen tuya no muestra solo belleza, muestra alma.
+                    </p>
+                  </div>
+                  <!-- Interactive Timeline Section -->
+                  <div class="relative">
+                    <!-- Central Line -->
+                    <div
+                      class="absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] timeline-line hidden md:block"
+                    ></div>
+                    <!-- Timeline Item 1 -->
+                    <div
+                      class="relative grid md:grid-cols-2 gap-8 md:gap-24 mb-32 items-center"
+                    >
+                      <div class="order-2 md:order-1 text-right md:pr-12">
+                        <div
+                          class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm mb-4"
+                        >
+                          mina🥇
+                        </div>
+                        <h3 class="text-white tracking-tight text-[48px] md:text-[64px] font-extrabold">
+
+                          Tu belleza 💓
+                        </h3>
+                        <p
+                          class="text-white/70 dark:text-[#c992a4] text-lg leading-relaxed"
+                        >
+                          No necesitas perfección para ser hermosa.
+                          Tu sencillez es lo que te hace única y cercana.
+                          En lo simple de tu forma de ser vive tu magia más grande.
+                        </p>
+                      </div>
+                      <div
+                        class="order-1 md:order-2 flex justify-start md:pl-12 relative"
+                      >
+                        <!-- Dot for Desktop -->
+                        <div
+                          class="absolute left-[-51px] top-1/2 transform -translate-y-1/2 size-4 bg-primary rounded-full border-4 border-background-dark hidden md:block z-10 shadow-[0_0_15px_rgba(238,43,108,0.5)]"
+                        ></div>
+                        <div
+                          class="polaroid-frame -rotate-3 rounded-sm w-full max-w-[320px]"
+                        >
+                          <div
+                            class="aspect-square bg-cover bg-center rounded-sm overflow-hidden"
+                            data-alt="Nuestra primera foto juntos sonriendo"
+                            style="
+                              background-image: url(images/imgHero.jpg);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    
+                    <!-- Timeline Item 2 -->
+                    <div
+                      class="relative grid md:grid-cols-2 gap-8 md:gap-24 mb-32 items-center"
+                    >
+                      <div class="order-1 flex justify-end md:pr-12 relative">
+                        <!-- Dot for Desktop -->
+                        <div
+                          class="absolute right-[-51px] top-1/2 transform -translate-y-1/2 size-4 bg-primary rounded-full border-4 border-background-dark hidden md:block z-10 shadow-[0_0_15px_rgba(238,43,108,0.5)]"
+                        ></div>
+                        <div
+                          class="polaroid-frame rotate-2 rounded-sm w-full max-w-[320px]"
+                        >
+                          <div
+                            class="aspect-square bg-cover bg-center rounded-sm overflow-hidden"
+                            data-alt="Pareja caminando por una playa al atardecer"
+                            style="
+                              background-image: url(images/hvest.jpeg);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="order-2 text-left md:pl-12">
+                        <div
+                          class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm mb-4"
+                        >
+                          Divina
+                        </div>
+                        <h3 class="text-white tracking-tight text-[48px] md:text-[64px] font-extrabold">
+
+                          Tu porte 
+                        </h3>
+                        <p
+                          class="text-white/70 dark:text-[#c992a4] text-lg leading-relaxed"
+                        >
+                          Refleja una seguridad tranquila, una elegancia que no se fuerza y una belleza que nace de tu esencia.Tu porte no impresiona, enamora.
+                        </p>
+                      </div>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div
+                      class="relative grid md:grid-cols-2 gap-8 md:gap-24 items-center"
+                    >
+                      <div class="order-2 md:order-1 text-right md:pr-12">
+                        <div
+                          class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm mb-4"
+                        >
+                          Hoy y Siempre
+                        </div>
+                        <h3 class="text-white tracking-tight text-[48px] md:text-[64px] font-extrabold">
+
+                          Tu sencillez
+                        </h3>
+                        <p
+                          class="text-white/70 dark:text-[#c992a4] text-lg leading-relaxed"
+                        >
+                          Tu sencillez es tu magia.
+                          No buscas brillar, y aun así iluminas.
+                          No pretendes ser más, y aun así lo eres todo. 🤍
+                        </p>
+                      </div>
+                      <div
+                        class="order-1 md:order-2 flex justify-start md:pl-12 relative"
+                      >
+                        <!-- Dot for Desktop -->
+                        <div
+                          class="absolute left-[-51px] top-1/2 transform -translate-y-1/2 size-4 bg-primary rounded-full border-4 border-background-dark hidden md:block z-10 shadow-[0_0_15px_rgba(238,43,108,0.5)]"
+                        ></div>
+                        <div
+                          class="polaroid-frame -rotate-2 rounded-sm w-full max-w-[320px]"
+                        >
+                          <div
+                            class="aspect-square bg-cover bg-center rounded-sm overflow-hidden"
+                            data-alt="Manos entrelazadas en primer plano"
+                            style="
+                              background-image: url(images/despH.jpeg);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="relative grid md:grid-cols-2 gap-8 md:gap-24 mb-32 items-center"
+                    >
+                      <div class="order-1 flex justify-end md:pr-12 relative">
+                        <!-- Dot for Desktop -->
+                        <div
+                          class="absolute right-[-51px] top-1/2 transform -translate-y-1/2 size-4 bg-primary rounded-full border-4 border-background-dark hidden md:block z-10 shadow-[0_0_15px_rgba(238,43,108,0.5)]"
+                        ></div>
+                        <div
+                          class="polaroid-frame rotate-2 rounded-sm w-full max-w-[320px]"
+                        >
+                          <div
+                            class="aspect-square bg-cover bg-center rounded-sm overflow-hidden"
+                            data-alt="Pareja caminando por una playa al atardecer"
+                            style="
+                              background-image: url(images/juntosH.jpeg);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                      <div class="order-2 text-left md:pl-12">
+                        <div
+                          class="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm mb-4"
+                        >
+                          Mimida
+                        </div>
+                        <h3 class="text-white tracking-tight text-[48px] md:text-[64px] font-extrabold">
+
+                          Mi corazon
+                        </h3>
+                        <p
+                          class="text-white/70 dark:text-[#c992a4] text-lg leading-relaxed"
+                        >
+                          Gracias por ser parte de mi vida…
+                          pero, sobre todo, gracias por hacerla mejor desde que estás en ella. 🤍
+                        </p>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <!-- Featured Quote Card -->
+                  <div class="mt-40 max-w-4xl mx-auto">
+                    <div
+                      class="bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl md:rounded-xl overflow-hidden min-h-[350px] shadow-2xl relative group"
+                      data-alt="Fondo romántico con luces desenfocadas"
+                      style="
+                        background-image:
+                          linear-gradient(
+                            0deg,
+                            rgba(34, 16, 22, 0.9) 0%,
+                            rgba(34, 16, 22, 0.4) 50%,
+                            rgba(34, 16, 22, 0.1) 100%
+                          ),
+                          url(images/intro.jpeg);
+                      "
+                    >
+                      <div
+                        class="flex w-full flex-col gap-4 p-8 md:p-12 text-center md:text-left"
+                      >
+                        <span
+                          class="material-symbols-outlined text-primary text-5xl mb-2"
+                          >favorite</span
+                        >
+                        <h2
+                          class="text-white tracking-tight text-3xl md:text-5xl font-extrabold leading-tight"
+                        >
+                          Cada día es un regalo
+                        </h2>
+                        <p
+                          class="text-white/80 text-lg md:text-xl font-medium leading-normal max-w-xl"
+                        >
+                          "Eres la historia más bonita que el destino escribió en mi
+                          vida, y Y cada día contigo es un regalo que no tiene comparación. ✨
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Scroll Prompt -->
+                  <div class="flex flex-col items-center mt-32 gap-4 opacity-60">
+                    <p class="text-sm uppercase tracking-widest font-bold text-primary">
+                      Continúa deslizando
+                    </p>
+                    <div
+                      class="size-10 flex items-center justify-center animate-bounce"
+                    >
+                      <span class="material-symbols-outlined text-primary text-3xl"
+                        >keyboard_arrow_down</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- SECCIÓN 4: RAZONES  -->
+              <section id="razones" class="scroll-mt-32 bg-background-dark py-32 px-6 md:px-20 transition-colors duration-700
+        " >
+                <div class="flex-1">
+                  <div class="w-full flex justify-center pt-16 pb-12">
+                    <div
+                      class="layout-content-container flex flex-col w-full max-w-[960px] flex-1"
+                    >
+                      <h1
+                        class="text-white tracking-tight text-[44px] md:text-[64px] font-bold leading-tight px-4 text-center"
+                      >
+                        Razones por las que te amo
+                      </h1>
+                      <p
+                        class="text-primary/80 text-lg md:text-xl font-normal leading-normal pb-3 pt-4 px-4 text-center max-w-2xl mx-auto"
+                      >
+                      No se cuentan, se sienten.
+                      No se explican, se viven.
+                      No se buscan… nacen.
+                        
+                      </p>
+                    </div>
+                  </div>
+                  <div class="w-full flex justify-center py-10">
+                    <div
+                      class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1 px-4"
+                    >
+                      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <details
+                          class="group relative overflow-hidden rounded-2xl bg-card-dark border border-white/5 transition-all duration-500 hover:border-primary/30"
+                        >
+                          <summary
+                            class="flex flex-col items-center justify-center aspect-[3/4] cursor-pointer relative z-10 group-open:hidden"
+                          >
+                            <div
+                              class="absolute inset-0 bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700"
+                              style="
+                                background-image: url(images/sonriza.jpeg);
+                              "
+                            ></div>
+                            <div class="relative z-20 flex flex-col items-center">
+                              <div
+                                class="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary mb-4"
+                              >
+                                <span class="text-3xl font-bold">01</span>
+                              </div>
+                              <span
+                                class="text-white font-bold tracking-[0.2em] uppercase text-sm"
+                                >Tu Sonrisa</span
+                              >
+                              <span
+                                class="material-symbols-outlined text-primary mt-4 animate-bounce"
+                                >expand_more</span
+                              >
+                            </div>
+                          </summary>
+                          <div class="relative aspect-[3/4] w-full overflow-hidden">
+                            <div class="absolute inset-0 bg-black">
+                              <img
+                                alt="Video Placeholder"
+                                class="w-full h-full object-cover opacity-40"
+                                src="images/sonriza1.jpeg"
+                              />
+                              
+                            </div>
+                            <div
+                              class="media-overlay absolute inset-0 flex flex-col justify-end p-8"
+                            >
+                              <h3 class="text-primary text-xl font-bold mb-2">
+                                01. Tu Sonrisa
+                              </h3>
+                              <p
+                                class="text-white text-lg leading-relaxed italic font-medium"
+                              >
+                                "Tu risa es la melodía que ilumina mis días más grises.
+                                Ver este video me recuerda por qué siempre quiero
+                                hacerte sonreír."
+                              </p>
+                              <button
+                                class="mt-6 flex items-center gap-2 text-white/60 text-sm font-bold uppercase tracking-widest hover:text-white"
+                                onclick="
+                                  this.closest('details').removeAttribute('open')
+                                "
+                              >
+                                <span class="material-symbols-outlined">close</span>
+                                Cerrar
+                              </button>
+                            </div>
+                          </div>
+                        </details>
+                        <details
+                          class="group relative overflow-hidden rounded-2xl bg-card-dark border border-white/5 transition-all duration-500 hover:border-primary/30"
+                        >
+                          <summary
+                            class="flex flex-col items-center justify-center aspect-[3/4] cursor-pointer relative z-10 group-open:hidden"
+                          >
+                            <div
+                              class="absolute inset-0 bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700"
+                              style="
+                                background-image: url(images/apoyo.jpg);
+                              "
+                            ></div>
+                            <div class="relative z-20 flex flex-col items-center">
+                              <div
+                                class="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary mb-4"
+                              >
+                                <span class="text-3xl font-bold">02</span>
+                              </div>
+                              <span
+                                class="text-white font-bold tracking-[0.2em] uppercase text-sm"
+                                >Tu Apoyo</span
+                              >
+                              <span class="material-symbols-outlined text-primary mt-4"
+                                >expand_more</span
+                              >
+                            </div>
+                          </summary>
+                          <div class="relative aspect-[3/4] w-full overflow-hidden">
+                            <img
+                              alt="Memory Photo"
+                              class="w-full h-full object-cover opacity-40"
+                              src="images/apoyo1.jpeg"
+                            />
+                            <div
+                              class="media-overlay absolute inset-0 flex flex-col justify-end p-8"
+                            >
+                              <h3 class="text-primary text-xl font-bold mb-2">
+                                02. Compañerismo
+                              </h3>
+                              <p
+                                class="text-white text-lg leading-relaxed italic font-medium"
+                              >
+                                "La forma en que me cuidas incluso en los días más
+                                difíciles. Esta foto captura exactamente ese sentimiento
+                                de paz que me das."
+                              </p>
+                              <button
+                                class="mt-6 flex items-center gap-2 text-white/60 text-sm font-bold uppercase tracking-widest hover:text-white"
+                                onclick="
+                                  this.closest('details').removeAttribute('open')
+                                "
+                              >
+                                <span class="material-symbols-outlined">close</span>
+                                Cerrar
+                              </button>
+                            </div>
+                          </div>
+                        </details>
+                        <details
+                          class="group relative overflow-hidden rounded-2xl bg-card-dark border border-white/5 transition-all duration-500 hover:border-primary/30"
+                        >
+                          <summary
+                            class="flex flex-col items-center justify-center aspect-[3/4] cursor-pointer relative z-10 group-open:hidden"
+                          >
+                            <div
+                              class="absolute inset-0 bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700"
+                              style="
+                                background-image: url(images/valentia.jpeg);
+                              "
+                            ></div>
+                            <div class="relative z-20 flex flex-col items-center">
+                              <div
+                                class="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary mb-4"
+                              >
+                                <span class="text-3xl font-bold">03</span>
+                              </div>
+                              <span
+                                class="text-white font-bold tracking-[0.2em] uppercase text-sm"
+                                >Tu Valentía</span
+                              >
+                              <span class="material-symbols-outlined text-primary mt-4"
+                                >expand_more</span
+                              >
+                            </div>
+                          </summary>
+                          <div class="relative aspect-[3/4] w-full overflow-hidden">
+                            <img
+                              alt="Memory Photo"
+                              class="w-full h-full object-cover opacity-40"
+                              src="images/valentia2.jpg"
+                            />
+                            <div
+                              class="media-overlay absolute inset-0 flex flex-col justify-end p-8"
+                            >
+                              <h3 class="text-primary text-xl font-bold mb-2">
+                                03. Inspiración
+                              </h3>
+                              <p
+                                class="text-white text-lg leading-relaxed italic font-medium"
+                              >
+                                Tu valentía se nota en cómo enfrentas la vida.
+                                En cómo resuelves, en cómo sigues, en cómo no te rindes.
+                                Eso es ser valiente de verdad. 🤍
+                              </p>
+                              <button
+                                class="mt-6 flex items-center gap-2 text-white/60 text-sm font-bold uppercase tracking-widest hover:text-white"
+                                onclick="
+                                  this.closest('details').removeAttribute('open')
+                                "
+                              >
+                                <span class="material-symbols-outlined">close</span>
+                                Cerrar
+                              </button>
+                            </div>
+                          </div>
+                        </details>
+                        <details
+                          class="group relative overflow-hidden rounded-2xl bg-card-dark border border-white/5 transition-all duration-500 hover:border-primary/30"
+                        >
+                          <summary
+                            class="flex flex-col items-center justify-center aspect-[3/4] cursor-pointer relative z-10 group-open:hidden"
+                          >
+                            <div
+                              class="absolute inset-0 bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700"
+                              style="
+                                background-image: url(images/mirada1.jpg);
+                              "
+                            ></div>
+                            <div class="relative z-20 flex flex-col items-center">
+                              <div
+                                class="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary mb-4"
+                              >
+                                <span class="text-3xl font-bold">04</span>
+                              </div>
+                              <span
+                                class="text-white font-bold tracking-[0.2em] uppercase text-sm"
+                                >Tu Mirada</span
+                              >
+                              <span class="material-symbols-outlined text-primary mt-4"
+                                >expand_more</span
+                              >
+                            </div>
+                          </summary>
+                          <div class="relative aspect-[3/4] w-full overflow-hidden">
+                            <div class="absolute inset-0 bg-black">
+                              <img
+                                alt="Video Placeholder"
+                                class="w-full h-full object-cover opacity-40"
+                                src="images/mirada2.png"
+                              />
+                              
+                            </div>
+                            <div
+                              class="media-overlay absolute inset-0 flex flex-col justify-end p-8"
+                            >
+                              <h3 class="text-primary text-xl font-bold mb-2">
+                                04. Magia
+                              </h3>
+                              <p
+                                class="text-white text-lg leading-relaxed italic font-medium"
+                              >
+                                "Tu mirada, que me dice todo sin una sola palabra. Hay
+                                mundos enteros en tus ojos cuando me miras así."
+                              </p>
+                              <button
+                                class="mt-6 flex items-center gap-2 text-white/60 text-sm font-bold uppercase tracking-widest hover:text-white"
+                                onclick="
+                                  this.closest('details').removeAttribute('open')
+                                "
+                              >
+                                <span class="material-symbols-outlined">close</span>
+                                Cerrar
+                              </button>
+                            </div>
+                          </div>
+                        </details>
+                        <details
+                          class="group relative overflow-hidden rounded-2xl bg-card-dark border border-white/5 transition-all duration-500 hover:border-primary/30"
+                        >
+                          <summary
+                            class="flex flex-col items-center justify-center aspect-[3/4] cursor-pointer relative z-10 group-open:hidden"
+                          >
+                            <div
+                              class="absolute inset-0 bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700"
+                              style="
+                                background-image: url(images/abrazos.jpeg);
+                                filter: hue-rotate(45deg);
+                              "
+                            ></div>
+                            <div class="relative z-20 flex flex-col items-center">
+                              <div
+                                class="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary mb-4"
+                              >
+                                <span class="text-3xl font-bold">05</span>
+                              </div>
+                              <span
+                                class="text-white font-bold tracking-[0.2em] uppercase text-sm"
+                                >Tus Abrazos</span
+                              >
+                              <span class="material-symbols-outlined text-primary mt-4"
+                                >expand_more</span
+                              >
+                            </div>
+                          </summary>
+                          <div class="relative aspect-[3/4] w-full overflow-hidden">
+                            <img
+                              alt="Memory Photo"
+                              class="w-full h-full object-cover opacity-40"
+                              src="images/abrazoss.jpg"
+                              style="filter: hue-rotate(45deg)"
+                            />
+                            <div
+                              class="media-overlay absolute inset-0 flex flex-col justify-end p-8"
+                            >
+                              <h3 class="text-primary text-xl font-bold mb-2">
+                                05. Refugio
+                              </h3>
+                              <p
+                                class="text-white text-lg leading-relaxed italic font-medium"
+                              >
+                                "Tus abrazos que parecen detener el tiempo y me hacen
+                                sentir que el mundo exterior no existe."
+                              </p>
+                              <button
+                                class="mt-6 flex items-center gap-2 text-white/60 text-sm font-bold uppercase tracking-widest hover:text-white"
+                                onclick="
+                                  this.closest('details').removeAttribute('open')
+                                "
+                              >
+                                <span class="material-symbols-outlined">close</span>
+                                Cerrar
+                              </button>
+                            </div>
+                          </div>
+                        </details>
+                        <details
+                          class="group relative overflow-hidden rounded-2xl bg-card-dark border border-white/5 transition-all duration-500 hover:border-primary/30"
+                        >
+                          <summary
+                            class="flex flex-col items-center justify-center aspect-[3/4] cursor-pointer relative z-10 group-open:hidden"
+                          >
+                            <div
+                              class="absolute inset-0 bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700"
+                              style="
+                                background-image: url(images/pass.jpeg);
+                                filter: sepia(0.5);
+                              "
+                            ></div>
+                            <div class="relative z-20 flex flex-col items-center">
+                              <div
+                                class="w-20 h-20 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 flex items-center justify-center text-primary mb-4"
+                              >
+                                <span class="text-3xl font-bold">06</span>
+                              </div>
+                              <span
+                                class="text-white font-bold tracking-[0.2em] uppercase text-sm"
+                                >Tu Pasión</span
+                              >
+                              <span class="material-symbols-outlined text-primary mt-4"
+                                >expand_more</span
+                              >
+                            </div>
+                          </summary>
+                          <div class="relative aspect-[3/4] w-full overflow-hidden">
+                            <img
+                              alt="Memory Photo"
+                              class="w-full h-full object-cover opacity-40"
+                              src="images/pas.jpeg"
+                              style="filter: sepia(0.5)"
+                            />
+                            <div
+                              class="media-overlay absolute inset-0 flex flex-col justify-end p-8"
+                            >
+                              <h3 class="text-primary text-xl font-bold mb-2">
+                                06. Entrega
+                              </h3>
+                              <p
+                                class="text-white text-lg leading-relaxed italic font-medium"
+                              >
+                                "La pasión que pones en cada pequeña cosa que haces me
+                                inspira a ser mejor cada día."
+                              </p>
+                              <button
+                                class="mt-6 flex items-center gap-2 text-white/60 text-sm font-bold uppercase tracking-widest hover:text-white"
+                                onclick="
+                                  this.closest('details').removeAttribute('open')
+                                "
+                              >
+                                <span class="material-symbols-outlined">close</span>
+                                Cerrar
+                              </button>
+                            </div>
+                          </div>
+                        </details>
+                      </div>
+                      <div class="mt-12 text-center">
+                        <p
+                          class="text-white/40 text-sm uppercase tracking-[0.3em] font-bold"
+                        >
+                          Y muchas más por descubrir...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full flex justify-center py-20">
+                    <div
+                      class="layout-content-container flex flex-col w-full max-w-[960px] flex-1"
+                    >
+                      <div
+                        class="mx-4 p-12 rounded-3xl bg-primary/5 border border-primary/20 text-center relative overflow-hidden"
+                      >
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                          <span class="material-symbols-outlined text-[120px]"
+                            >favorite</span
+                          >
+                        </div>
+                        <span
+                          class="material-symbols-outlined text-primary text-5xl mb-6"
+                          >auto_awesome</span
+                        >
+                        <p
+                          class="text-white text-2xl md:text-3xl font-medium leading-relaxed italic max-w-2xl mx-auto"
+                        >
+                          "Estas razones son solo el prólogo de nuestra historia.
+                          Gracias por ser mi persona favorita." 💓
+                        </p>
+                        <div class="mt-8">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- SECCIÓN 5: ultima  -->
+              <section id="ultima" class="scroll-mt-32 bg-background-dark py-32 px-6 md:px-20 transition-colors duration-700
+        ">
+                <div
+                  class="fixed inset-0 z-50 flex items-start md:items-center justify-center p-4 md:p-10 bg-background-dark/90 opacity-0 pointer-events-none transition-all duration-700 ease-in-out scale-95 backdrop-blur-md overflow-y-auto"
+                  id="letter-overlay"
+                >
+                  <div
+                    class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto text-stone-800 p-6 md:p-16 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-stone-300"
+                    style="background-image:linear-gradient(rgba(255,255,255,0.55),
+                          rgba(255,255,255,0.55)),url('images/valentia.jpeg');
+                          background-size: cover;
+                          background-position: center;"
+                  >
+
+
+                    <div
+                      class="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none"
+                    >
+                      <span class="material-symbols-outlined text-8xl"
+                        >local_florist</span
+                      >
+                    </div>
+                    <label
+                      class="absolute top-4 right-4 cursor-pointer text-stone-400 hover:text-stone-800 transition-colors flex items-center gap-2 group"
+                      for="reveal-toggle"
+                    >
+                      <span
+                        class="text-xs font-medium uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity"
+                        >Cerrar</span
+                      >
+                      <span class="material-symbols-outlined text-3xl">close</span>
+                    </label>
+                    <div class="flex flex-col items-center gap-8">
+                      <div class="text-primary/40">
+                        <span
+                          class="material-symbols-outlined text-4xl"
+                          style="font-variation-settings: &quot;FILL&quot; 1"
+                          >favorite</span
+                        >
+                      </div>
+                      <div class="space-y-6 text-center">
+                        <p
+                          class="font-handwritten text-4xl md:text-5xl leading-relaxed text-stone-800/90"
+                        >
+                        Amor, gracias por ser mi apoyo incondicional, por estar en cada paso de mi vida y por iluminar mis días con tu presencia.
+                        </p>
+                        <p
+                          class="font-handwritten text-3xl md:text-4xl leading-relaxed text-stone-800/90"
+                        >
+                          Le pido a Dios que te bendiga siempre, que te cuide, te proteja y te llene de salud,
+                          para seguir compartiendo este camino juntos…
+                          y que la vida te conceda muchos años más, para amarte, cuidarte y caminar a tu lado. 💖
+                        </p>
+                        <p
+                          class="font-handwritten text-4xl md:text-5xl leading-[1.4] tracking-wide"
+                        >
+                          Feliz cumpleaños 
+                        </p>
+                      </div>
+                      <div class="mt-8 flex flex-col items-center gap-2">
+                        <div class="h-px w-24 bg-stone-300"></div>
+                        <span class="material-symbols-outlined text-primary/60"
+                          >auto_awesome</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <section
+                    class="relative min-h-screen bg-background-dark px-6 py-32 flex items-center justify-center"
+                >
+                  <div class="absolute inset-0 bg-vignette pointer-events-none"></div>
+                  <div
+                    class="layout-content-container flex flex-col max-w-[800px] w-full items-center z-10"
+                  >
+                    <div class="mb-12">
+                      <h1
+                        class="font-serif italic text-white tracking-wide text-5xl md:text-7xl font-light text-center pb-4 opacity-90"
+                      >
+                        Y por último...
+                      </h1>
+                      <div
+                        class="h-1 w-24 bg-primary mx-auto rounded-full opacity-50"
+                      ></div>
+                    </div>
+                    <div
+                      class="w-full max-w-2xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-16 backdrop-blur-sm flex flex-col items-center gap-10 shadow-2xl"
+                    >
+                      <div class="flex flex-col gap-4 text-center">
+                        <h2
+                          class="text-white text-2xl md:text-4xl font-bold leading-tight tracking-tight"
+                        >
+                          Un último detalle para ti
+                        </h2>
+                        <p
+                          class="text-white/60 text-lg font-light leading-relaxed max-w-[500px] mx-auto"
+                        >
+                          Todo el recorrido nos ha traído hasta este momento íntimo. El
+                          final es solo un nuevo comienzo.
+                        </p>
+                      </div>
+                      <div class="group relative">
+                        <div
+                          class="absolute -inset-1 bg-primary rounded-xl blur opacity-20 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"
+                        ></div>
+                        <label
+                          class="relative flex flex-col items-center gap-6 px-12 py-10 bg-background-dark border-2 border-primary/30 rounded-xl glow-effect transition-all duration-500 hover:border-primary cursor-pointer"
+                          for="reveal-toggle"
+                        >
+                          <div
+                            class="p-5 bg-primary/10 rounded-full text-primary group-hover:scale-110 transition-transform duration-500"
+                          >
+                            <span class="material-symbols-outlined text-6xl"
+                              >card_giftcard</span
+                            >
+                          </div>
+                          <span
+                            class="text-primary text-xl font-bold tracking-[0.1em] uppercase"
+                            >Haz clic para descubrir</span
+                          >
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </section>
+            </main>
+
+            <!-- SECCIÓN 6: FINAL -->
+            <footer
+              class="bg-background-dark py-12 text-center text-white/20 text-xs tracking-[0.3em] uppercase"
+            >
+              Con todo mi amor AMD • 2026
+            </footer>
+
+
+
+    </div>
+
+    <audio id="bg-music" loop preload="auto">
+      <source src="music/Negar.mp3" type="audio/mpeg" />
+      Tu navegador no soporta audio.
+    </audio>
+
+<script>
+  const loader = document.getElementById("loader");
+  const mainContent = document.getElementById("main-content");
+
+  const audio = document.getElementById("bg-music");
+  const musicBtn = document.getElementById("music-toggle");
+  const musicIcon = document.getElementById("music-icon");
+
+  let isPlaying = false;
+
+  function playMusic() {
+    audio.volume = 0.4;
+    audio.play()
+      .then(() => {
+        isPlaying = true;
+        musicIcon.textContent = "volume_up";
+      })
+      .catch(() => {
+        // Autoplay bloqueado hasta interacción
+        isPlaying = false;
+        musicIcon.textContent = "volume_off";
+      });
+  }
+
+  function pauseMusic() {
+    audio.pause();
+    isPlaying = false;
+    musicIcon.textContent = "volume_off";
+  }
+
+  // 🎵 Botón play / pause
+  musicBtn.addEventListener("click", () => {
+    if (isPlaying) {
+      pauseMusic();
+    } else {
+      playMusic();
+    }
+  });
+
+  // ⏳ Simulación del loader
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      loader.classList.add("opacity-0");
+      setTimeout(() => {
+        loader.style.display = "none";
+        mainContent.classList.remove("hidden");
+        mainContent.classList.add("opacity-100");
+
+        // Intentar reproducir al terminar loader
+        playMusic();
+      }, 800);
+    }, 3000);
+  });
+
+  // 🔓 Desbloqueo por interacción (fallback seguro)
+  document.addEventListener("click", () => {
+    if (!isPlaying) {
+      playMusic();
+    }
+  }, { once: true });
+</script>
+
+
+
+  
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openMenu = document.getElementById("open-menu");
+    const closeMenu = document.getElementById("close-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (!openMenu || !closeMenu || !mobileMenu) return;
+
+    openMenu.addEventListener("click", () => {
+      mobileMenu.classList.remove("opacity-0", "pointer-events-none");
+      mobileMenu.classList.add("opacity-100");
+      document.body.classList.add("overflow-hidden");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.add("opacity-0", "pointer-events-none");
+      mobileMenu.classList.remove("opacity-100");
+      document.body.classList.remove("overflow-hidden");
+    });
+  });
+</script>
+
+
+
+
+
+
+  <script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  const main = document.getElementById("main-content");
+
+  const LOADER_TIME = 6000; // ⏱️ tiempo visible real del loader (6s)
+  const FADE_TIME = 50;    // ⏳ duración del fade
+
+  // Espera con loader visible
+  setTimeout(() => {
+
+    // Fade out del loader
+    loader.classList.add("opacity-0");
+
+    // Cuando termina el fade
+    setTimeout(() => {
+      loader.remove();                 
+      main.classList.remove("hidden"); 
+      main.classList.add("opacity-100");
+      document.body.classList.remove("overflow-hidden");
+    }, FADE_TIME);
+
+  }, LOADER_TIME);
+});
+</script>
+
+  </body>
+</html>
