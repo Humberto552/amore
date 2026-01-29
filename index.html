@@ -68,23 +68,21 @@
           rgba(34, 16, 22, 1) 100%
         );
       }
-      #reveal-toggle:checked + #letter-overlay {
-        opacity: 1;
-        pointer-events: auto;
-        transform: scale(1);
-      }
-      
       #letter-overlay{
         opacity: 0;
         pointer-events: none;
         transform: scale(0.95);
         transition: all 0.7s ease;
       }
-
-
-
+      
+      #letter-overlay.active{
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
+      }
 
     </style>
+    
   </head>
   <body class="overflow-hidden">
 
@@ -1205,147 +1203,6 @@
     </audio>
 
 <script>
-  const loader = document.getElementById("loader");
-  const mainContent = document.getElementById("main-content");
-
-  const audio = document.getElementById("bg-music");
-  const musicBtn = document.getElementById("music-toggle");
-  const musicIcon = document.getElementById("music-icon");
-
-  let isPlaying = false;
-
-  function playMusic() {
-    audio.volume = 0.4;
-    audio.play()
-      .then(() => {
-        isPlaying = true;
-        musicIcon.textContent = "volume_up";
-      })
-      .catch(() => {
-        // Autoplay bloqueado hasta interacción
-        isPlaying = false;
-        musicIcon.textContent = "volume_off";
-      });
-  }
-
-  function pauseMusic() {
-    audio.pause();
-    isPlaying = false;
-    musicIcon.textContent = "volume_off";
-  }
-
-  // 🎵 Botón play / pause
-  musicBtn.addEventListener("click", () => {
-    if (isPlaying) {
-      pauseMusic();
-    } else {
-      playMusic();
-    }
-  });
-
-  // ⏳ Simulación del loader
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      loader.classList.add("opacity-0");
-      setTimeout(() => {
-        loader.style.display = "none";
-        mainContent.classList.remove("hidden");
-        mainContent.classList.add("opacity-100");
-
-     
-      }, 800);
-    }, 3000);
-  });
-
-  // 🔓 Desbloqueo por interacción (fallback seguro)
-  document.addEventListener("click", () => {
-    if (!isPlaying) {
-      playMusic();
-    }
-  }, { once: true });
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const loader = document.getElementById("loader");
-  const main = document.getElementById("main-content");
-  const bar = document.getElementById("loader-bar");
-  const percentText = document.getElementById("loader-percent");
-
-  const images = document.images;
-  const totalAssets = images.length + 1; // +1 por la música
-  let loadedAssets = 0;
-
-  const updateProgress = () => {
-    loadedAssets++;
-    const percent = Math.round((loadedAssets / totalAssets) * 100);
-    bar.style.width = percent + "%";
-    percentText.textContent = percent + "%";
-
-    if (percent >= 100) {
-      setTimeout(() => {
-        loader.classList.add("opacity-0");
-        main.classList.remove("opacity-0");
-
-        setTimeout(() => {
-          loader.style.display = "none";
-        }, 700);
-
-        iniciarMusica();
-      }, 600);
-    }
-  };
-
-  // Pre-cargar imágenes
-  for (let img of images) {
-    if (img.complete) {
-      updateProgress();
-    } else {
-      img.addEventListener("load", updateProgress);
-      img.addEventListener("error", updateProgress);
-    }
-  }
-
-  // Precargar música
-  const audio = new Audio("music/Negar.mp3");
-  audio.addEventListener("canplaythrough", updateProgress);
-  audio.load();
-
-  // Música
-  let musicaActiva = false;
-  const musicBtn = document.getElementById("music-toggle");
-  const icon = document.getElementById("music-icon");
-
-  function iniciarMusica() {
-    audio.loop = true;
-    audio.volume = 0.5;
-    audio.play().then(() => {
-      musicaActiva = true;
-      icon.textContent = "volume_up";
-    }).catch(() => {
-      icon.textContent = "volume_off";
-    });
-  }
-
-  musicBtn.addEventListener("click", () => {
-    if (musicaActiva) {
-      audio.pause();
-      icon.textContent = "volume_off";
-    } else {
-      audio.play();
-      icon.textContent = "volume_up";
-    }
-    musicaActiva = !musicaActiva;
-  });
-});
-</script>
-
-
-
-
-  
-
-<script>
   document.addEventListener("DOMContentLoaded", () => {
     const openMenu = document.getElementById("open-menu");
     const closeMenu = document.getElementById("close-menu");
@@ -1366,40 +1223,112 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      
+        /* =========================
+           OVERLAY (Carta)
+        ========================== */
+        const revealToggle = document.getElementById("reveal-toggle");
+        const overlay = document.getElementById("letter-overlay");
+      
+        if (revealToggle && overlay) {
+          revealToggle.addEventListener("change", () => {
+            overlay.classList.toggle("active", revealToggle.checked);
+            document.body.classList.toggle("overflow-hidden", revealToggle.checked);
+          });
+        }
+      
+        /* =========================
+           LOADER
+        ========================== */
+        const loader = document.getElementById("loader");
+        const main = document.getElementById("main-content");
+      
+        if (loader && main) {
+          setTimeout(() => {
+            loader.classList.add("opacity-0");
+      
+            setTimeout(() => {
+              loader.remove();
+              main.classList.remove("hidden");
+              main.classList.add("opacity-100");
+              document.body.classList.remove("overflow-hidden");
+            }, 700);
+      
+          }, 3500); // tiempo real del loader
+        }
+      
+        /* =========================
+           MÚSICA
+        ========================== */
+        const audio = document.getElementById("bg-music");
+        const musicBtn = document.getElementById("music-toggle");
+        const musicIcon = document.getElementById("music-icon");
+      
+        let isPlaying = false;
+      
+        function playMusic() {
+          audio.volume = 0.4;
+          audio.play().then(() => {
+            isPlaying = true;
+            if (musicIcon) musicIcon.textContent = "volume_up";
+          }).catch(() => {
+            if (musicIcon) musicIcon.textContent = "volume_off";
+          });
+        }
+      
+        function pauseMusic() {
+          audio.pause();
+          isPlaying = false;
+          if (musicIcon) musicIcon.textContent = "volume_off";
+        }
+      
+        if (musicBtn) {
+          musicBtn.addEventListener("click", () => {
+            isPlaying ? pauseMusic() : playMusic();
+          });
+        }
+      
+        // Autoplay desbloqueado por primera interacción
+        document.addEventListener("click", () => {
+          if (!isPlaying) playMusic();
+        }, { once: true });
+      
+        /* =========================
+           MENÚ MÓVIL
+        ========================== */
+        const openMenu = document.getElementById("open-menu");
+        const closeMenu = document.getElementById("close-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+      
+        if (openMenu && closeMenu && mobileMenu) {
+          openMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("opacity-0", "pointer-events-none");
+            mobileMenu.classList.add("opacity-100");
+            document.body.classList.add("overflow-hidden");
+          });
+      
+          closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.add("opacity-0", "pointer-events-none");
+            mobileMenu.classList.remove("opacity-100");
+            document.body.classList.remove("overflow-hidden");
+          });
+        }
+      
+      });
+      </script>
 
 
 
 
 
 
-  <script>
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
-  const main = document.getElementById("main-content");
 
-  const LOADER_TIME = 6000; // ⏱️ tiempo visible real del loader (6s)
-  const FADE_TIME = 50;    // ⏳ duración del fade
-
-  // Espera con loader visible
-  setTimeout(() => {
-
-    // Fade out del loader
-    loader.classList.add("opacity-0");
-
-    // Cuando termina el fade
-    setTimeout(() => {
-      loader.remove();                 
-      main.classList.remove("hidden"); 
-      main.classList.add("opacity-100");
-      document.body.classList.remove("overflow-hidden");
-    }, FADE_TIME);
-
-  }, LOADER_TIME);
-});
-</script>
 
   </body>
 </html>
+
 
 
 
