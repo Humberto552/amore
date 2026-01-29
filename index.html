@@ -74,6 +74,12 @@
         pointer-events: auto;
         transform: scale(1);
       }
+      #letter-overlay{
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.95);
+      }
+
 
 
     </style>
@@ -249,11 +255,7 @@
               </div>
 
 
-    <div id="main-content" class="hidden opacity-0 transition-opacity duration-700">
-
-      
-
-            
+    <div id="main-content" class="opacity-0 transition-opacity duration-700">
 
             <main class="flex flex-col">
               <!-- Hero Section -->
@@ -1311,6 +1313,7 @@ window.addEventListener("load", () => {
 
   </body>
 </html>
+
 
 
 
