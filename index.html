@@ -68,12 +68,12 @@
           rgba(34, 16, 22, 1) 100%
         );
       }
-        /* Mostrar carta final */
-      #reveal-toggle:checked ~ #main-content #letter-overlay {
+      #reveal-toggle:checked ~ #letter-overlay {
         opacity: 1;
         pointer-events: auto;
         transform: scale(1);
       }
+
       #letter-overlay{
         opacity: 0;
         pointer-events: none;
@@ -86,8 +86,7 @@
   </head>
   <body class="overflow-hidden">
 
-    <!-- CONTROL DEL OVERLAY -->
-          <input type="checkbox" id="reveal-toggle" class="hidden">
+   
     <!-- LOADER -->
     <div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#12070c] transition-opacity duration-6000 overflow-hidden">
           <div class="fixed inset-0 bg-subtle-gradient pointer-events-none"></div>
@@ -139,12 +138,15 @@
                 >
                   Cargando magia
                 </p>
-                <p class="text-primary text-sm font-semibold">85%</p>
+                <p id="loader-percent" class="text-primary text-sm font-semibold">0%</p>
               </div>
               <div class="w-full h-[3px] bg-white/10 rounded-full overflow-hidden">
                 <div
-                  class="h-full bg-primary rounded-full animate-progress shadow-[0_0_20px_rgba(238,43,108,0.8)]"
+                  id="loader-bar"
+                  class="h-full bg-primary rounded-full transition-all duration-300"
+                  style="width: 0%"
                 ></div>
+
               </div>
               <div class="flex items-center justify-center gap-2 mt-4 opacity-40">
                 <span class="material-symbols-outlined text-[14px] text-[#d488a0]">
@@ -256,6 +258,8 @@
 
 
     <div id="main-content" class="opacity-0 transition-opacity duration-700">
+       <!-- CONTROL DEL OVERLAY -->
+          <input type="checkbox" id="reveal-toggle" class="hidden">
 
             <main class="flex flex-col">
               <!-- Hero Section -->
@@ -1254,6 +1258,82 @@
   }, { once: true });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader");
+  const main = document.getElementById("main-content");
+  const bar = document.getElementById("loader-bar");
+  const percentText = document.getElementById("loader-percent");
+
+  const images = document.images;
+  const totalAssets = images.length + 1; // +1 por la música
+  let loadedAssets = 0;
+
+  const updateProgress = () => {
+    loadedAssets++;
+    const percent = Math.round((loadedAssets / totalAssets) * 100);
+    bar.style.width = percent + "%";
+    percentText.textContent = percent + "%";
+
+    if (percent >= 100) {
+      setTimeout(() => {
+        loader.classList.add("opacity-0");
+        main.classList.remove("opacity-0");
+
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 700);
+
+        iniciarMusica();
+      }, 600);
+    }
+  };
+
+  // Pre-cargar imágenes
+  for (let img of images) {
+    if (img.complete) {
+      updateProgress();
+    } else {
+      img.addEventListener("load", updateProgress);
+      img.addEventListener("error", updateProgress);
+    }
+  }
+
+  // Precargar música
+  const audio = new Audio("music/Negar.mp3");
+  audio.addEventListener("canplaythrough", updateProgress);
+  audio.load();
+
+  // Música
+  let musicaActiva = false;
+  const musicBtn = document.getElementById("music-toggle");
+  const icon = document.getElementById("music-icon");
+
+  function iniciarMusica() {
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.play().then(() => {
+      musicaActiva = true;
+      icon.textContent = "volume_up";
+    }).catch(() => {
+      icon.textContent = "volume_off";
+    });
+  }
+
+  musicBtn.addEventListener("click", () => {
+    if (musicaActiva) {
+      audio.pause();
+      icon.textContent = "volume_off";
+    } else {
+      audio.play();
+      icon.textContent = "volume_up";
+    }
+    musicaActiva = !musicaActiva;
+  });
+});
+</script>
+
+
 
 
   
@@ -1313,6 +1393,7 @@ window.addEventListener("load", () => {
 
   </body>
 </html>
+
 
 
 
