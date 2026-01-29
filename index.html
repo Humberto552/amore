@@ -75,9 +75,13 @@
         transform: scale(1);
       }
 
+
     </style>
   </head>
   <body class="overflow-hidden">
+
+    <!-- CONTROL DEL OVERLAY -->
+          <input type="checkbox" id="reveal-toggle" class="hidden">
     <!-- LOADER -->
     <div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#12070c] transition-opacity duration-6000 overflow-hidden">
           <div class="fixed inset-0 bg-subtle-gradient pointer-events-none"></div>
@@ -247,8 +251,7 @@
 
     <div id="main-content" class="hidden opacity-0 transition-opacity duration-700">
 
-      <!-- CONTROL DEL OVERLAY -->
-          <input type="checkbox" id="reveal-toggle" class="hidden">
+      
 
             
 
@@ -1308,6 +1311,7 @@ window.addEventListener("load", () => {
 
   </body>
 </html>
+
 
 
 
