@@ -69,11 +69,12 @@
         );
       }
         /* Mostrar carta final */
-      #reveal-toggle:checked ~ main #letter-overlay {
+      #reveal-toggle:checked ~ #main-content #letter-overlay {
         opacity: 1;
         pointer-events: auto;
         transform: scale(1);
       }
+
     </style>
   </head>
   <body class="overflow-hidden">
@@ -1235,8 +1236,7 @@
         mainContent.classList.remove("hidden");
         mainContent.classList.add("opacity-100");
 
-        // Intentar reproducir al terminar loader
-        playMusic();
+     
       }, 800);
     }, 3000);
   });
@@ -1308,5 +1308,6 @@ window.addEventListener("load", () => {
 
   </body>
 </html>
+
 
 
